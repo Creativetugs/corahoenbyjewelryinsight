@@ -1,0 +1,82 @@
+/* Same layout as the main site. Only the carousel and the travel colors live here. */
+
+.carousel {
+  display: grid;
+  grid-template-columns: 46px 1fr 46px;
+  gap: 12px;
+  align-items: center;
+}
+.carousel-viewport { overflow: hidden; container-type: inline-size; }
+.carousel-track {
+  display: flex;
+  gap: 14px;
+  transition: transform 0.55s ease;
+}
+.carousel-track figure {
+  flex: 0 0 calc((100cqw - 28px) / 3);
+  margin: 0;
+  background: #d8d7d4;
+}
+.carousel-track img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.carousel-track figcaption {
+  padding: 10px 2px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.carousel-btn {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+}
+.carousel-btn:hover { border-color: var(--ink); }
+
+body { overflow-x: hidden; }
+
+.travel-block {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 42px max(20px, calc((100vw - 1320px) / 2)) 22px;
+}
+.tone-greece { background: #2a2418; color: #f4ecd8; }
+.tone-greece h2, .tone-greece .eyebrow { color: #9dc3f0; }
+.tone-namibia { background: #17132b; color: #f3e9d8; }
+.tone-namibia h2, .tone-namibia .eyebrow { color: #f09a6b; }
+.tone-brazil { background: #605c57; color: #f6f0e4; }
+.tone-brazil h2, .tone-brazil .eyebrow { color: #f3cf86; }
+.tone-guatemala { background: #0f2f3d; color: #f4ecd8; }
+.tone-guatemala h2, .tone-guatemala .eyebrow { color: #e8a93a; }
+.tone-germany { background: #1d1a18; color: #f0e9e2; }
+.tone-germany h2, .tone-germany .eyebrow { color: #d98a5f; }
+.tone-papua { background: #17201b; color: #efe9de; }
+.tone-papua h2, .tone-papua .eyebrow { color: #d98a5f; }
+.tone-belize { background: #0c3c3e; color: #f4ecd8; }
+.tone-belize h2, .tone-belize .eyebrow { color: #e8a93a; }
+.tone-india { background: #b05a24; color: #fff; }
+.tone-india h2, .tone-india .eyebrow { color: #d3e0a8; }
+
+.travel-block .group-intro { color: inherit; }
+.travel-block .inspire-card { background: #f7f5f2; color: #2a2c2e; }
+.travel-block .inspire-card p { color: #5c5e62; }
+.travel-block + .travel-block { border-top: 0; }
+
+@media (max-width: 980px) {
+  .carousel-track figure { flex-basis: calc((100cqw - 14px) / 2); }
+}
+@media (max-width: 680px) {
+  .carousel { grid-template-columns: 36px 1fr 36px; gap: 8px; }
+  .carousel-track figure { flex-basis: 100cqw; }
+  .carousel-track img { height: 280px; }
+  .carousel-btn { width: 36px; height: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { transition: none; }
+}
